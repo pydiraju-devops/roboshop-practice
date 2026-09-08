@@ -1,5 +1,5 @@
 #!/bin/bash
 
-TIMESTAMP=$(date)
+COMMAND=$(touch)
 
-echo "script excuted at $TIMESTAMP"
+echo "file created at $COMMAND"
