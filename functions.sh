@@ -11,12 +11,13 @@ VALIDATE(){
         if [ $1 -ne 0 ]; then
            echo "$2 is failure"
            exit 1
-else 
+        else 
            echo "$2 is success"
-fi    
-}
+fi
 
-  echo "installing nginx"
+
+}
+ 
   dnf install nginx -y 
   VALIDATE $? "installing nginx"
 
@@ -24,5 +25,5 @@ fi
   VALIDATE $? "installing mysql"
  
 
-dnf install nodejs  -y 
-VALIDATE $? "installing noejs"
+  dnf install nodejs  -y 
+  VALIDATE $? "installing noejs"
