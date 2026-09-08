@@ -20,11 +20,14 @@ fi
 
 }
  
-  dnf install nginx -y &>> $LOGS_FILE
-  VALIDATE $? "installing nginx"
-
-  dnf install mysql -y &>> $LOGS_FILE
-  VALIDATE $? "installing mysql"
- 
-  dnf install nodejs  -y &>> $LOGS_FILE
-  VALIDATE $? "installing noejs"
+for package in $@ ###parameter should pass here 
+do 
+  dnf list installed $package &>>LOGS_FILE
+  if [ $? -ne 0 ]; then
+     echo "$package not installed , installing now "
+     dnf install $package -y &>>LOGS_FILE
+     VALIDATE $? "$package installtion"
+    else
+       echo "$package already installed , skipping"
+    fi 
+done
