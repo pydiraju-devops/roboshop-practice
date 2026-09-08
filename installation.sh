@@ -8,8 +8,8 @@ if [ $USER_ID -ne 0 ]; then
 fi  
 
   echo "installing nginx"
-  dnf install nginx -y 
-  
+  dnf installlll nginx -y 
+
 if [ $? -ne 0 ]; then
    echo "installing nginx is failure"
    exit 1
