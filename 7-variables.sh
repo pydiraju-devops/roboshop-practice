@@ -4,6 +4,8 @@ START_TIME=$(date +%s)
 
 echo "script start time $START_TIME"
 
+sleep 10
+
 END_TIME=$(date +%S)
 
 TOTAL_TIME=$(($START_TIME-$END_TIME))
