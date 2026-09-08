@@ -1,5 +1,5 @@
 #!/bin/bash
 
-COMMAND=$(ls)
+COMMAND=$(ls -l)
 
 echo "file created at $COMMAND"
