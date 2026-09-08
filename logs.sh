@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
 LOGS_FILE="/var/log/shell-script/$0.log"
 if [ $USER_ID -ne 0 ]; then
-    echo "run this script with root user"
+    echo "run this script with root user" | tea -a $LOGS_FILE
     exit 1
 fi  
 
@@ -12,10 +12,10 @@ mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
         if [ $1 -ne 0 ]; then
-           echo "$2 is failure"
+           echo "$2 is failure" | tea -a $LOGS_FILE
            exit 1
         else 
-           echo "$2 is success"
+           echo "$2 is success" | tea -a $LOGS_FILE
 fi
 
 }
