@@ -1,11 +1,14 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-
+LOGS_FOLDER="/var/log/shell-script"
+LOGS_FILE="/var/log/shell-script/$0.log"
 if [ $USER_ID -ne 0 ]; then
     echo "run this script with root user"
     exit 1
 fi  
+
+mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
         if [ $1 -ne 0 ]; then
@@ -15,15 +18,13 @@ VALIDATE(){
            echo "$2 is success"
 fi
 
-
 }
  
-  dnf install nginx -y 
+  dnf install nginx -y &>> $LOGS_FILE
   VALIDATE $? "installing nginx"
 
-  dnf install mysql -y 
+  dnf install mysql -y &>> $LOGS_FILE
   VALIDATE $? "installing mysql"
  
-
-  dnf install nodejs  -y 
+  dnf install nodejs  -y &>> $LOGS_FILE
   VALIDATE $? "installing noejs"
