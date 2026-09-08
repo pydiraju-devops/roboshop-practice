@@ -1,5 +1,5 @@
 #!/bin/bash
 
-COMMAND=$(touch)
+COMMAND=$(ls)
 
 echo "file created at $COMMAND"
