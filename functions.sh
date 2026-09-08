@@ -18,10 +18,10 @@ fi
 
 }
  
-  dnf install nginxee -y 
+  dnf install nginx -y 
   VALIDATE $? "installing nginx"
 
-  dnf install mysql -y 
+  dnf install mysqlll -y 
   VALIDATE $? "installing mysql"
  
 
