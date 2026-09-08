@@ -1,6 +1,6 @@
 #!/bin/bash
 
-raju:: hai sai . how are you
-sai:: hai raju . iam doing good how about you 
-raju:: iam learning devops and aws 
-sai:: ho nice raju
+echo raju :: hai sai . how are you
+echo sai :: hai raju . iam doing good how about you 
+echo raju :: iam learning devops and aws 
+echo sai :: ho nice raju
