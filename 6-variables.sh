@@ -1,5 +1,5 @@
 #!/bin/bash
 
-COMMAND=$(ls -l)
+COMMAND=$(pwd)
 
 echo "file created at $COMMAND"
