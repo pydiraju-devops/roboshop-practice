@@ -30,7 +30,7 @@ VALIDATE() {
 for package in "$@"
 do
 
-    dnf list installeddd "$package" &>> "$LOGS_FILE"
+    dnf list install "$package" &>> "$LOGS_FILE"
 
     if [ $? -ne 0 ]; then
 
