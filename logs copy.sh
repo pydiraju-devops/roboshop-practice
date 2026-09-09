@@ -20,7 +20,7 @@ VALIDATE(){
            echo -e "$2 is $R failure $N" | tee -a $LOGS_FILE
            exit 1
         else 
-           echo "$2 is $G success $N" | tee -a $LOGS_FILE
+           echo -e "$2 is $G success $N" | tee -a $LOGS_FILE
 fi
 
 }
@@ -29,10 +29,10 @@ for package in $@ ###parameter should pass here
 do 
   dnf list installed $package &>>LOGS_FILE
   if [ $? -ne 0 ]; then
-     echo  "$package not installed , installing now "
+     echo -e  "$package not installed , installing now "
      dnf install $package -y &>>LOGS_FILE
      VALIDATE $? "$package installtion"
     else
-       echo "$package  already installed  , $Y skipping $N"
+       echo -e "$package  already installed  , $Y skipping $N"
     fi 
 done
